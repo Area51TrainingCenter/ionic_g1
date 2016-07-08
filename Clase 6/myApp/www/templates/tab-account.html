@@ -1,0 +1,20 @@
+<ion-view view-title="Account">
+  <ion-content>
+    <ion-list>
+    <ion-toggle  ng-model="settings.enableFriends">
+        Enable Friends
+    </ion-toggle>
+    </ion-list>
+
+    <button class="button button-block button-balanced"
+    ng-click="showAlert()">
+    Disparar alerta
+  </button>
+
+  <button class="button button-block button-energized"
+  ng-click="showConfirm()">
+  Confirmar
+</button>
+
+  </ion-content>
+</ion-view>

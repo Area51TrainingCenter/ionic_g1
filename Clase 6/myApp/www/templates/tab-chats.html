@@ -1,0 +1,16 @@
+<ion-view view-title="Fotografía">
+  <ion-content>
+
+  <img ng-src="{{ picture }}" class="full-image myPic"/>
+
+    <button class="button button-block button-positive"
+    ng-click="takePic(1)">
+    Tomar foto
+  </button>
+
+  <button class="button button-block button-energized"
+   ng-click="takePic(0)">
+  Abrir galeria
+</button>
+  </ion-content>
+</ion-view>
