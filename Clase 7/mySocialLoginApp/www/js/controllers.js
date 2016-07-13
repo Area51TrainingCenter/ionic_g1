@@ -1,0 +1,44 @@
+angular.module('starter.controllers', [])
+
+.controller('DashCtrl', function($scope) {})
+
+.controller('ChatsCtrl', function($scope, Chats) {
+  // With the new view caching in Ionic, Controllers are only called
+  // when they are recreated or on app start, instead of every page change.
+  // To listen for when this page is active (for example, to refresh data),
+  // listen for the $ionicView.enter event:
+  //
+  //$scope.$on('$ionicView.enter', function(e) {
+  //});
+
+  $scope.chats = Chats.all();
+  $scope.remove = function(chat) {
+    Chats.remove(chat);
+  };
+})
+
+.controller('LoginCtrl', function($scope, $firebaseAuth) {
+  var auth = $firebaseAuth();
+  $scope.userData = {};
+  $scope.credentialData = {};
+  $scope.loginWithGithub = function() {
+    // login with Github   photoURL
+    auth.$signInWithPopup("github").then(function(userData) {
+      $scope.userData = userData.user;
+      $scope.credentialData = userData.credential;
+      console.log("Signed in as:", userData);
+    }).catch(function(error) {
+      console.log("Authentication failed:", error);
+    });
+  }
+})
+
+.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+  $scope.chat = Chats.get($stateParams.chatId);
+})
+
+.controller('AccountCtrl', function($scope) {
+  $scope.settings = {
+    enableFriends: true
+  };
+});

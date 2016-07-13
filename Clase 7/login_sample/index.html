@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyD1nhVWEcopFkeRVnC9OtjOZNP6q_qHqzQ",
+            authDomain: "mypokemon-8f4cb.firebaseapp.com",
+            databaseURL: "https://mypokemon-8f4cb.firebaseio.com",
+            storageBucket: "mypokemon-8f4cb.appspot.com",
+        };
+
+        firebase.initializeApp(config);
+
+        var provider = new firebase.auth.GithubAuthProvider();
+
+        //firebase.auth().signInWithPopup(provider)
+        firebase.auth().signInWithRedirect(provider)
+            .then(function(result) {
+                var token = result.credential.accessToken;
+                var user = result.user;
+                console.log('token: '+ token);
+                console.log('user: '+ user);
+                console.log(user);
+            }).catch(function(error) {
+                console.log('error.code: ' + error.code);
+                console.log('error.message: ' + error.message);
+                console.log('error.mail: ' + error.mail);
+                console.log('error.credential: ' + error.credential);
+
+            })
+    </script>
+
+</body>
+
+</html>
