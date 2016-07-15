@@ -53,3 +53,6 @@ Curso de Ionic Framework
 ## Must to watch ;)
 * [Ejemplo práctico de web app con AngularJS, NodeJS y MongoDB](https://www.video2brain.com/mx/cursos/ejemplo-practico-de-web-app-con-angularjs-nodejs-y-mongodb)
 * [All my videos!](https://www.video2brain.com/mx/formadores/sergio-brito)
+
+
+###be0fcc74d7e3def649c3dd09c8db6002c5501213
